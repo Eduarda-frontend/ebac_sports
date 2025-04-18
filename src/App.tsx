@@ -15,26 +15,20 @@ export type Produto = {
 }
 
 function App() {
-  const [produtos, setProdutos] = useState<Produto[]>([])
+  // const [produtos, setProdutos] = useState<Produto[]>([])
 
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/ebac_sports')
-      .then((res) => res.json())
-      .then((res) => setProdutos(res))
-  }, [])
+  // useEffect(() => {
+  //   fetch('https://fake-api-tau.vercel.app/api/ebac_sports')
+  //     .then((res) => res.json())
+  //     .then((res) => setProdutos(res))
+  // }, [])
 
-  function adicionarAoCarrinho() {
-    console.log('teste')
-  }
   return (
     <Provider store={store}>
       <GlobalStyle />
       <div className="container">
         <Header />
-        <Produtos
-          produtos={produtos}
-          adicionarAoCarrinho={adicionarAoCarrinho}
-        />
+        <Produtos />
       </div>
     </Provider>
   )
